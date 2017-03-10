@@ -1,0 +1,106 @@
+body {
+  font-family: 'Oxygen', sans-serif;
+  background-color: #ffe2e8;
+}
+
+#header-nav {
+  background-color: #E91E63;
+  color: white;
+  border-radius: 0px;
+  border: 0px;
+}
+
+#logo-img {
+  background: url('../images/SAAWG_LOGO_resized.png') no-repeat;
+  width: 140px;
+  height: 122px;
+  margin: 10px 15px 10px 0px;
+}
+
+.navbar-brand {
+  padding-top: 30px;
+}
+
+.navbar-brand h1 {
+  color: white;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px #222;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.navbar-brand a:hover, .navbar-brand a:focus {
+  text-decoration: none;
+}
+
+.navbar-brand p span {
+  color: white;
+  vertical-align: middle;
+}
+
+#nav-list {
+  padding-top: 20px;
+}
+
+#nav-list a {
+  color: white;
+  text-align: center;
+}
+
+#nav-list a:hover {
+  /* need to change the background color */
+  background-color: pink;
+}
+
+#nav-list a span {
+  font-size: 2.3em;
+}
+
+.navbar-brand button.navbar-toggle, .navbar-header .icon-bar {
+  border: 1px solid #ffe2e8;
+}
+
+.navbar-header button.navbar-toggle {
+  clear: both;
+  margin-bottom: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+/*
+********************************************************************************
+media queries for the mobile device sizes
+********************************************************************************
+*/
+@media (max-width: 482px) {
+  .navbar-brand h1 {
+    font-size: 25px;
+  }
+
+  .navbar-brand p span {
+    font-size: 0.8em;
+  }
+}
+
+
+/*
+********************************************************************************
+media queries for the super-xtra-small device sizes
+********************************************************************************
+*/
+@media (max-width: 378px) {
+  .navbar-brand h1 {
+    font-size: 25px;
+  }
+
+  .navbar-brand p span {
+    font-size: 0.69em;
+  }
+}
