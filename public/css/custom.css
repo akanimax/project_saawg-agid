@@ -100,10 +100,11 @@ body {
 .styled-panel-body {
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
+  overflow: hidden;
 }
 
 .slightly-dark-pink {
-  background-color: #e74b53;
+  background-color: #C2185B;
 }
 
 .main-title {
@@ -142,8 +143,10 @@ center {
 }
 
 .text-title-pink {
-  color: #e74b53;
+  color: #e91e63;
   font-weight: bold;
+  /*font-family: 'lora', serif;*/
+  text-shadow: 2px 2px 2px #800000;
   font-size: 3em;
 }
 
@@ -218,6 +221,23 @@ center {
 
 .social-wrapper {
   margin-top: 25px;
+}
+
+.marquee {
+    top: 20em;
+    position: relative;
+    box-sizing: border-box;
+    animation: marquee 20s linear infinite;
+}
+
+.marquee:hover {
+    animation-play-state: paused;
+}
+
+/* Make it move! */
+@keyframes marquee {
+    0%   { top:  20em }
+    100% { top: -60em }
 }
 
 /*
