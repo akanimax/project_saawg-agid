@@ -1,10 +1,16 @@
+/*
+  Original colors
+  body #ffe2e8
+  nav  #E91E63
+*/
+
 body {
   font-family: 'Oxygen', sans-serif;
-  background-color: #ffe2e8;
+  background-color: #fef4f7;
 }
 
 #header-nav {
-  background-color: #E91E63;
+  background-color: #e91e63;
   color: white;
   border-radius: 0px;
   border: 0px;
@@ -23,8 +29,9 @@ body {
 
 .navbar-brand h1 {
   color: white;
+  font-family: 'Lora', serif;
   font-weight: bold;
-  text-shadow: 1px 1px 1px #222;
+  text-shadow: 2px 2px 2px #222;
   margin-top: 0px;
   margin-bottom: 0px;
 }
@@ -48,8 +55,7 @@ body {
 }
 
 #nav-list a:hover {
-  /* need to change the background color */
-  background-color: pink;
+  background-color: #f6bcc1;
 }
 
 #nav-list a span {
@@ -65,12 +71,112 @@ body {
   margin-bottom: 20px;
 }
 
+#main-photo .jumbotron {
+  background: url('../images/jumbo_photo_resized.jpg') no-repeat;
+  background-size: cover;
+  height: 400px;
+  border-radius: 0px;
+}
 
+.slightly-dark-pink {
+  background-color: #e74b53;
+}
 
+.main-title {
+  font-family: 'Lora', serif;
+  color: #e91e63;
+  text-shadow: 2px 2px 2px #800000;
+  text-align: center;
+  font-size: 2.7em;
+}
 
+center {
+  margin-top: 14px;
+}
 
+.sub-title {
+  text-align: center;
+  font-size: 18px;
+}
 
+.sub-font {
+  color: #e74b53;
+  font-size: 20px;
+  font-weight: 900;
+}
 
+.text {
+  color: #800000;
+  font-size: 1.4em;
+  line-height: 1.2em;
+}
+
+.title-text {
+  font-size: 4em;
+  font-weight: bold;
+  color: white;
+}
+
+.text-title-pink {
+  color: #e74b53;
+  font-weight: bold;
+  font-size: 3em;
+}
+
+.text-title-maroon {
+  color: #800000;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.text-subtitle-maroon {
+  color: #800000;
+}
+
+.text-in-pink {
+  padding-left: 20px;
+  color: white;
+  font-size: 1.5em;
+  font-weight: bold;
+  line-height: 115%;
+}
+
+#vision-mission {
+  padding-top: 10px;
+  padding-bottom: 50px;
+}
+
+#council {
+  padding: 30px;
+}
+
+#council h2 {
+  margin-bottom: 40px;
+}
+
+#council .panel {
+  background-color: inherit;
+  border: 0px;
+  border-radius: 0px;
+  box-shadow: 0px 0px 0px;
+  margin-bottom: 0px;
+}
+
+#home .info {
+  width: 80%;
+  margin-bottom: 100px;
+}
+
+/*
+********************************************************************************
+media queries for the tablet and laptop device sizes
+********************************************************************************
+*/
+@media (min-width: 970px) {
+  .compressor {
+    width: 80%;
+  }
+}
 
 
 
