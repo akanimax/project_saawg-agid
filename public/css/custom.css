@@ -167,6 +167,35 @@ center {
   margin-bottom: 100px;
 }
 
+#footer {
+  background-color: #880E4F;
+  color: white;
+}
+
+#footer .fa-bigsize {
+  margin-top:13px;
+  font-size: 4em;
+}
+
+#footer .btn-bigsize {
+  width: 60px;
+  height: 60px;
+}
+
+#sub-footer {
+  border-top: 0px;
+  background-color: #C2185B;
+  color: white;
+}
+
+#footer, #sub-footer {
+  border-radius: 0px;
+}
+
+.social-wrapper {
+  margin-top: 25px;
+}
+
 /*
 ********************************************************************************
 media queries for the tablet and laptop device sizes
