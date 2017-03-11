@@ -87,6 +87,7 @@ body {
 .styled-panel {
   max-height: 411px;
   overflow-y: scroll;
+  overflow-x: hidden;
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
 }
@@ -162,6 +163,7 @@ center {
   font-size: 1.5em;
   font-weight: bold;
   line-height: 115%;
+  text-align: justify;
 }
 
 #vision-mission {
