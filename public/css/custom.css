@@ -160,7 +160,6 @@ center {
 .text-title-pink {
   color: #e91e63;
   font-weight: bold;
-  /*font-family: 'lora', serif;*/
   text-shadow: 2px 2px 2px #800000;
   font-size: 3em;
 }
@@ -279,8 +278,21 @@ a.list-group-item {
   margin-bottom: 70px;
 }
 
+form {
+  margin-bottom: 70px;
+}
 
+form textarea {
+  min-height: 150px;
+}
 
+marquee h5 {
+  font-size: 1.2em;
+}
+
+.styled-panel-heading > h3 {
+  margin-top: 0px;
+}
 
 /*
 ********************************************************************************
