@@ -2,6 +2,7 @@
   Original colors
   body #ffe2e8
   nav  #E91E63
+  dark pink #C2185B
 */
 
 body {
@@ -34,7 +35,11 @@ body {
   text-shadow: 2px 2px 2px #222;
   margin-top: 0px;
   margin-bottom: 0px;
-  font-size: 3em;
+  font-size: 2.3em;
+}
+
+.navbar-brand span {
+  font-size: 0.9em;
 }
 
 .navbar-brand a:hover, .navbar-brand a:focus {
@@ -85,8 +90,8 @@ body {
 }
 
 .styled-panel {
-  max-height: 411px;
-  overflow-y: scroll;
+  max-height: 420px;
+  overflow-y: hidden;
   overflow-x: hidden;
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
@@ -189,6 +194,14 @@ center {
   margin-bottom: 0px;
 }
 
+#front-content {
+  margin-top: 45px;
+}
+
+#home {
+  margin-top: 50px;
+}
+
 #home .info {
   width: 80%;
   margin-bottom: 100px;
@@ -223,21 +236,14 @@ center {
   margin-top: 25px;
 }
 
-.marquee {
-    top: 20em;
-    position: relative;
-    box-sizing: border-box;
-    animation: marquee 20s linear infinite;
+.carousel-inner img {
+  /*opacity: 0.8;*/
 }
 
-.marquee:hover {
-    animation-play-state: paused;
-}
-
-/* Make it move! */
-@keyframes marquee {
-    0%   { top:  20em }
-    100% { top: -60em }
+.carousel-caption h2 {
+  font-weight: bold;
+  text-shadow: 0px 5px 10px #e91e63;
+  color: white;
 }
 
 /*
@@ -267,7 +273,7 @@ media queries for the small sized devices
 media queries for the super-xtra-small device sizes
 ********************************************************************************
 */
-@media (max-width: 378px) {
+@media (max-width: 446px) {
   .navbar-brand h1 {
     font-size: 25px;
   }
