@@ -35,11 +35,11 @@ body {
   text-shadow: 2px 2px 2px #222;
   margin-top: 0px;
   margin-bottom: 0px;
-  font-size: 2.3em;
+  font-size: 1.7em;
 }
 
 .navbar-brand span {
-  font-size: 0.9em;
+  font-size: 0.86em;
 }
 
 .navbar-brand a:hover, .navbar-brand a:focus {
@@ -52,10 +52,11 @@ body {
 }
 
 #nav-list {
-  padding-top: 20px;
+  padding-top: 40px;
 }
 
 #nav-list a {
+  padding: 5px;
   color: white;
   text-align: center;
 }
@@ -64,8 +65,17 @@ body {
   background-color: #f6bcc1;
 }
 
+li.current {
+  background-color: lightpink;
+}
+
+ #nav-list a i {
+   font-size: 2.2em;
+   margin-bottom: 2px;
+ }
+
 #nav-list a span {
-  font-size: 2.3em;
+  font-size: 2em;
 }
 
 .navbar-brand button.navbar-toggle, .navbar-header .icon-bar {
@@ -117,7 +127,7 @@ body {
   color: #e91e63;
   text-shadow: 2px 2px 2px #800000;
   text-align: center;
-  font-size: 2.7em;
+  font-size: 2.8em;
 }
 
 center {
@@ -236,15 +246,41 @@ center {
   margin-top: 25px;
 }
 
-.carousel-inner img {
-  /*opacity: 0.8;*/
-}
-
 .carousel-caption h2 {
   font-weight: bold;
   text-shadow: 0px 5px 10px #e91e63;
   color: white;
 }
+
+/*
+********************************************************************************
+Second page of the website (Newsletter page)
+********************************************************************************
+*/
+
+.min-viewport {
+  min-height: 350px;
+}
+
+.list-group-item.active, .list-group-item.active:hover {
+  background-color: #e91e63;
+  border: 0px;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+a.list-group-item {
+  color: #C2185B;
+  font-size: 1.2em;
+}
+
+.list-group {
+  margin-top: 50px;
+  margin-bottom: 70px;
+}
+
+
+
 
 /*
 ********************************************************************************
