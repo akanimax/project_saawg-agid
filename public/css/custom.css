@@ -56,7 +56,7 @@ body {
 }
 
 #nav-list a {
-  padding: 5px;
+  padding: 4px;
   color: white;
   text-align: center;
 }
@@ -75,7 +75,7 @@ li.current {
  }
 
 #nav-list a span {
-  font-size: 2em;
+  font-size: 0.9em;
 }
 
 .navbar-brand button.navbar-toggle, .navbar-header .icon-bar {
@@ -287,7 +287,7 @@ form textarea {
 }
 
 marquee h5 {
-  font-size: 1.2em;
+  font
 }
 
 .styled-panel-heading > h3 {
