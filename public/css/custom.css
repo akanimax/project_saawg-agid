@@ -18,9 +18,9 @@ body {
 }
 
 #logo-img {
-  background: url('../images/SAAWG_LOGO_resized.png') no-repeat;
-  width: 140px;
-  height: 122px;
+  background: url('../images/SAAWG_LOGO_FINALLY_FINAL_resized.jpg') no-repeat;
+  width: 105px;
+  height: 105px;
   margin: 10px 15px 10px 0px;
 }
 
@@ -120,6 +120,10 @@ li.current {
 
 .slightly-dark-pink {
   background-color: #e31c6c;
+}
+
+.members-info a:focus {
+  outline: 0px;
 }
 
 .main-title {
