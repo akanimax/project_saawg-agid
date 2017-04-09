@@ -187,6 +187,7 @@ center {
 }
 
 #vision-mission {
+  background-color: #C2185B;
   padding-top: 10px;
   padding-bottom: 50px;
 }
@@ -235,13 +236,13 @@ center {
   height: 60px;
 }
 
-#sub-footer {
+#sub-footer, #sub-sub-footer {
   border-top: 0px;
   background-color: #C2185B;
   color: white;
 }
 
-#footer, #sub-footer {
+#footer, #sub-footer, #sub-sub-footer {
   border-radius: 0px;
 }
 
@@ -255,6 +256,14 @@ center {
   color: white;
 }
 
+.ng-valid.ng-touched {
+  border: green solid 2px;
+}
+
+.ng-invalid.ng-touched {
+  border: red solid 2px;
+}
+
 /*
 ********************************************************************************
 Second page of the website (Newsletter page)
@@ -262,7 +271,7 @@ Second page of the website (Newsletter page)
 */
 
 .min-viewport {
-  min-height: 350px;
+  min-height: 405px;
 }
 
 .list-group-item.active, .list-group-item.active:hover {

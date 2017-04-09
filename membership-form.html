@@ -25,11 +25,14 @@
     <!-- google's lora font -->
     <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
 
+    <!-- Angular js library for form validation -->
+    <script src="public/js/angular.min.js" charset="utf-8"></script>
+
     <!-- enable the responsiveness of the site for mobile users -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
-  <body>
+  <body ng-app="main">
     <!-- header section of the page (Navigation bar) -->
     <header>
       <nav id="header-nav" class="navbar navbar-default">
@@ -106,47 +109,111 @@
     </header>
 
     <!-- Main content of the Page hereafter -->
-    <!-- Main photo gallery of the gruop of the group -->
-    <section id = "newsletter" class="min-viewport">
+    <!-- MembershipForm here -->
+    <section id = "newsletter" class="min-viewport"
+      ng-controller="memberformController as mC">
       <div class="container">
         <div class="row">
           <div class="col-xs-offset-1 col-xs-10 col-md-offset-2 col-md-8">
             <h2 class="text-center text-title-pink">Membership Form</h2>
             <hr>
-            <form class="text-subtitle-maroon">
+            <form class="text-subtitle-maroon" name="memberForm" novalidate>
               <div class="form-group">
                 <label for="name">Fullname (Beginning With Surname) * </label>
-                <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+                <input type="text" class="form-control" id="name" placeholder="Enter your name" name="fullname"
+                ng-model="mC.member.name"
+                ng-required = "true"
+                ng-minlength = "4"
+                ng-maxlength = "100">
+                <span ng-if="(memberForm.fullname.$error.minlength ||
+                memberForm.fullname.$error.maxlength || memberForm.fullname.$error.required)
+                && memberForm.fullname.$touched">
+                  *First name is required (min = 4 chars, max = 100 chars)</span>
               </div>
 
               <div class="form-group">
                 <label for="address">Postal Address * </label>
-                <textarea type="text" class="form-control" id="address" placeholder="Enter your Address" style="height: 0px;" required> </textarea>
+                <textarea type="text" class="form-control" id="address" placeholder="Enter your Address" style="height: 0px;" name = "address"
+                ng-model="mC.member.address"
+                ng-required = "true"
+                ng-minlength = "10"
+                ng-maxlength = "2000"> </textarea>
+                <span ng-if="(memberForm.address.$error.minlength ||
+                memberForm.address.$error.maxlength || memberForm.address.$error.required)
+                && memberForm.address.$touched">
+                *Postal address is required (min = 10 chars, max = 2000 chars)</span>
+              </div>
+
+              <div class="form-group">
+                <label for="country">Country * </label>
+                <input type="text" class="form-control" id="country" placeholder="Enter your country name" name = "country"
+                ng-model="mC.member.country"
+                ng-required = "true"
+                ng-minlength = "1"
+                ng-maxlength = "100">
+                <span ng-if="(memberForm.country.$error.minlength ||
+                memberForm.country.$error.maxlength || memberForm.country.$error.required)
+                && memberForm.country.$touched">
+                *Country name is required (max = 100 chars)</span>
               </div>
 
               <div class="form-group">
                 <label for="email_id">Email address*</label>
-                <input type="email" class="form-control" id="email_id" placeholder="Enter your Email id" required>
+                <input type="email" class="form-control" id="email_id" placeholder="Enter your Email id" name = "email"
+                ng-model="mC.member.email"
+                ng-required = "true">
+                <span ng-if="memberForm.email.$error.required
+                  && memberForm.email.$touched">
+                *email is required in proper format</span>
               </div>
 
               <div class="form-group">
-                <label for="edu"> Education </label>
-                <input type="text" class="form-control" id="edu" placeholder="Education (Degree)">
+                <label for="edu"> Education* </label>
+                <input type="text" class="form-control" id="edu" placeholder="Education (Degree)" name = "education"
+                ng-model="mC.member.education"
+                ng-required = "true"
+                ng-minlength = "1"
+                ng-maxlength = "100">
+                <span ng-if="(memberForm.education.$error.minlength ||
+                memberForm.education.$error.maxlength || memberForm.education.$error.required)
+                && memberForm.education.$touched">
+                *Education details are required (max = 100 chars)</span>
               </div>
 
               <div class="form-group">
                 <label for="uni"> University </label>
-                <input type="text" class="form-control" id="uni" placeholder="Name of the university">
+                <input type="text" class="form-control" id="uni" placeholder="Name of the university" name = "university"
+                ng-model="mC.member.university"
+                ng-minlength = "1"
+                ng-maxlength = "200">
+                <span ng-if="(memberForm.university.$error.minlength ||
+                memberForm.university.$error.maxlength)
+                && memberForm.university.$touched">
+                *University details exceed max limit (max = 200 chars)</span>
               </div>
 
               <div class="form-group">
                 <label for="emp"> Name of current employer (if employed) </label>
-                <input type="text" class="form-control" id="emp" placeholder="Company/ Organisation">
+                <input type="text" class="form-control" id="emp" placeholder="Company/ Organisation" name = "employer"
+                ng-model="mC.member.employer"
+                ng-minlength = "1"
+                ng-maxlength = "200">
+                <span ng-if="(memberForm.employer.$error.minlength ||
+                memberForm.employer.$error.maxlength)
+                && memberForm.employer.$touched">
+                *Employmer details exceed max limit (max = 200 chars)</span>
               </div>
 
               <div class="form-group">
                 <label for="emp-role"> Role as an employee (if employed) </label>
-                <input type="text" class="form-control" id="emp-role" placeholder="Brief description of duties and responsibilities">
+                <input type="text" class="form-control" id="emp-role" placeholder="Brief description of duties and responsibilities" name = "role"
+                ng-model="mC.member.role"
+                ng-minlength = "1"
+                ng-maxlength = "200">
+                <span ng-if="(memberForm.role.$error.minlength ||
+                memberForm.role.$error.maxlength)
+                && memberForm.role.$touched">
+                *Employmer details exceed max limit (max = 200 chars)</span>
               </div>
 
               <div id="fields-of-interest">
@@ -155,43 +222,51 @@
                   <div class="col-sm-4">
                     <div class="checkbox">
                       <label>
-                        <input type="checkbox"> Geoscience education
+                        <input type="checkbox" value="Geoscience education"
+                        ng-click='mC.toggleSelection("Geoscience education")'> Geoscience education
                       </label>
                     </div>
 
                     <div class="checkbox">
                       <label>
-                        <input type="checkbox"> Research
+                        <input type="checkbox" value="Research"
+                        ng-click='mC.toggleSelection("Research")'> Research
                       </label>
                     </div>
 
                     <div class="checkbox">
                       <label>
-                        <input type="checkbox"> Laboratory work
+                        <input type="checkbox" value="Laboratory work"
+                        ng-click='mC.toggleSelection("Laboratory work")'> Laboratory work
                       </label>
                     </div>
 
                     <div class="checkbox">
                       <label>
-                        <input type="checkbox"> Field work
+                        <input type="checkbox" value="Field work"
+                        ng-click='mC.toggleSelection("Field work")'> Field work
                       </label>
                     </div>
 
                     <div class="checkbox">
                       <label>
-                        <input type="checkbox"> Environmental protection
+                        <input type="checkbox" value="Environmental protection"
+                        ng-click='mC.toggleSelection("Environmental protection")'> Environmental protection
                       </label>
                     </div>
 
                     <div class="checkbox">
                       <label>
-                        <input type="checkbox"> Sustainable mining
+                        <input type="checkbox" value="Sustainable mining"
+                        ng-click='mC.toggleSelection("Sustainable mining")'> Sustainable mining
                       </label>
                     </div>
 
                     <div class="checkbox">
                       <label>
-                        <input type="checkbox"> Ecofriendly &amp; socio-friendly
+                        <input type="checkbox" value="Ecofriendly &amp; socio-friendly
+                          development of water and mineral resources"
+                          ng-click='mC.toggleSelection("Ecofriendly & socio-friendly development of water and mineral resources")'> Ecofriendly &amp; socio-friendly
                           development of water and mineral resources
                       </label>
                     </div>
@@ -201,43 +276,50 @@
                   <div class="col-sm-4">
                     <div class="checkbox">
                       <label>
-                        <input type="checkbox"> Renewable Energy
+                        <input type="checkbox" value="Renewable Energy"
+                        ng-click='mC.toggleSelection("Renewable Energy")'> Renewable Energy
                       </label>
                     </div>
 
                     <div class="checkbox">
                       <label>
-                        <input type="checkbox"> Geothermal Energy
+                        <input type="checkbox" value="Geothermal Energy"
+                        ng-click='mC.toggleSelection("Geothermal Energy")'> Geothermal Energy
                       </label>
                     </div>
 
                     <div class="checkbox">
                       <label>
-                        <input type="checkbox"> Geoethics
+                        <input type="checkbox" value="Geoethics"
+                        ng-click='mC.toggleSelection("Geoethics")'> Geoethics
                       </label>
                     </div>
 
                     <div class="checkbox">
                       <label>
-                        <input type="checkbox"> Remote sensing &amp; GIS
+                        <input type="checkbox" value="Remote sensing &amp; GIS"
+                        ng-click='mC.toggleSelection("Remote sensing & GIS")'> Remote sensing &amp; GIS
                       </label>
                     </div>
 
                     <div class="checkbox">
                       <label>
-                        <input type="checkbox"> Geoheritage &amp; geoparks
+                        <input type="checkbox" value="Geoheritage &amp; geoparks"
+                        ng-click='mC.toggleSelection("Geoheritage & geoparks")'> Geoheritage &amp; geoparks
                       </label>
                     </div>
 
                     <div class="checkbox">
                       <label>
-                        <input type="checkbox"> Forestation
+                        <input type="checkbox" value="Forestation"
+                        ng-click='mC.toggleSelection("Forestation")'> Forestation
                       </label>
                     </div>
 
                     <div class="checkbox">
                       <label>
-                        <input type="checkbox"> Drinking watersupply in Urban &amp; Rural
+                        <input type="checkbox" value="Drinking watersupply in Urban &amp; Rural areas"
+                        ng-click='mC.toggleSelection("Drinking watersupply in Urban & Rural areas")'> Drinking watersupply in Urban &amp; Rural
                           areas
                       </label>
                     </div>
@@ -247,49 +329,57 @@
                   <div class="col-sm-4">
                     <div class="checkbox">
                       <label>
-                        <input type="checkbox"> Irrigation
+                        <input type="checkbox" value="Irrigation"
+                        ng-click='mC.toggleSelection("Irrigation")'> Irrigation
                       </label>
                     </div>
 
                     <div class="checkbox">
                       <label>
-                        <input type="checkbox"> Urban environment
+                        <input type="checkbox" value="Urban environment"
+                        ng-click='mC.toggleSelection("Urban environment")'> Urban environment
                       </label>
                     </div>
 
                     <div class="checkbox">
                       <label>
-                        <input type="checkbox"> Fossil fuels
+                        <input type="checkbox" value="Fossil fuels"
+                        ng-click='mC.toggleSelection("Fossil fuels")'> Fossil fuels
                       </label>
                     </div>
 
                     <div class="checkbox">
                       <label>
-                        <input type="checkbox"> Groundwater
+                        <input type="checkbox" value="Groundwater"
+                        ng-click='mC.toggleSelection("Groundwater")'> Groundwater
                       </label>
                     </div>
 
                     <div class="checkbox">
                       <label>
-                        <input type="checkbox"> Hydrology
+                        <input type="checkbox" value="Hydrology"
+                        ng-click='mC.toggleSelection("Hydrology")'> Hydrology
                       </label>
                     </div>
 
                     <div class="checkbox">
                       <label>
-                        <input type="checkbox"> Geohazards
+                        <input type="checkbox" value="Geohazards"
+                        ng-click='mC.toggleSelection("Geohazards")'> Geohazards
                       </label>
                     </div>
 
                     <div class="checkbox">
                       <label>
-                        <input type="checkbox"> Engineering geology
+                        <input type="checkbox" value="Engineering geology"
+                        ng-click='mC.toggleSelection("Engineering geology")'> Engineering geology
                       </label>
                     </div>
 
                     <div class="checkbox">
                       <label>
-                        <input type="checkbox"> structural and geotectonics
+                        <input type="checkbox" value="structural and geotectonics"
+                        ng-click='mC.toggleSelection("structural and geotectonics")'> structural and geotectonics
                       </label>
                     </div>
 
@@ -300,15 +390,32 @@
               <div class="form-group">
                 <label for="other"> Other: </label>
                 <input type="text" class="form-control" id="other"
-                placeholder="Mention your intrests here; if not in the list already">
+                placeholder="Mention your intrests here; if not in the list already"
+                name = "other"
+                ng-model="mC.member.other"
+                ng-minlength = "1"
+                ng-maxlength = "1000">
+                <span ng-if="(memberForm.other.$error.minlength ||
+                memberForm.other.$error.maxlength)
+                && memberForm.other.$touched">
+                *Other interests exceed max limit (max = 1000 chars)</span>
               </div>
 
-              <button type="submit" class="btn btn-default
-                      text-subtitle-maroon">Submit</button>
+              <button class="btn btn-text-subtitle-maroon"
+              ng-disabled="memberForm.$invalid"
+              ng-click="mC.addMember()">Submit</button>
             </form>
           </div>
+        </div> <!-- End row -->
+
+        <div class="row">
+          <div class="alert alert-danger text-center"
+            ng-if="mC.message.length != 0">
+            <h1> <b> {{ mC.message }} </b> </h1>
+          </div>
         </div>
-      </div>
+
+      </div> <!-- End container -->
     </section>
 
 
@@ -321,29 +428,42 @@
           </div>
 
           <div class="col-sm-5 col-lg-3 social-wrapper">
-            <a class="btn btn-social-icon btn-twitter btn-bigsize">
+            <a class="btn btn-social-icon btn-twitter btn-bigsize"
+            href="https://twitter.com/saawg2016"
+            target="_blank">
               <span class="fa fa-twitter fa-bigsize"></span>
             </a>
 
-            <a class="btn btn-social-icon btn-facebook btn-bigsize">
+            <a class="btn btn-social-icon btn-facebook btn-bigsize"
+            href="https://www.facebook.com/saawg2016/"
+            target="_blank">
               <span class="fa fa-facebook fa-bigsize"></span>
             </a>
 
-            <a class="btn btn-social-icon btn-instagram btn-bigsize">
-              <span class="fa fa-instagram fa-bigsize"></span>
-            </a>
-
-            <a class="btn btn-social-icon btn-linkedin btn-bigsize">
+            <a class="btn btn-social-icon btn-linkedin btn-bigsize"
+            href="https://www.linkedin.com/in/saawg-south-asia-71a822140"
+            target="_blank">
               <span class="fa fa-linkedin fa-bigsize"></span>
             </a>
           </div>
         </div>
       </div>
     </div>
+
     <div id="sub-footer" class="panel-footer">
       <div class="container">
         Copyright © 2017 <br>
         SAAWG (South Asian Association for Women Geoscientists)
+      </div>
+    </div>
+
+    <div id="sub-sub-footer" class="panel-footer" style="background-color: #ef5ba1;">
+      <div class="container">
+        Created By:
+        <a href="https://github.com/akanimax" target="_blank"
+          style="color: white;">
+          <u> Animesh Karnewar </u>
+        </a>
       </div>
     </div>
 
@@ -352,6 +472,13 @@
         interval: 4000
       });
     </script>
+
+    <!-- The main angular app module -->
+    <script src="public/src/main.module.js" charset="utf-8"></script>
+
+    <!-- The Membership Form controllers module -->
+    <script src="public/src/MembershipForm/memberform.controller.js"
+      charset="utf-8"></script>
 
   </body>
 </html>

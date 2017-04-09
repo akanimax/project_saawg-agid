@@ -107,35 +107,33 @@
 
     <!-- Main content of the Page hereafter -->
     <!-- Main photo gallery of the gruop of the group -->
-    <section id = "newsletter" class="min-viewport">
+    <section id = "contact-us" class="min-viewport">
       <div class="container">
         <div class="row">
           <div class="col-xs-offset-1 col-xs-10 col-md-offset-2 col-md-8">
             <h2 class="text-center text-title-pink">Contact Us</h2>
             <hr>
-            <form class="text-subtitle-maroon">
+            <form class="text-subtitle-maroon" action="mailto:saawg2016@gmail.com"
+            method="post" enctype="text/plain">
               <div class="form-group">
                 <label for="name">Name: </label>
-                <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                <input type="text" class="form-control" id="name" placeholder="Enter your name" name="name">
               </div>
 
               <div class="form-group">
                 <label for="email_id">Email address:*</label>
-                <input type="email" class="form-control" id="email_id" placeholder="Enter your Email id" required>
-              </div>
-
-              <div class="form-group">
-                <label for="subject">Subject: </label>
-                <input type="text" class="form-control" id="subject" placeholder="Subject of your query">
+                <input type="email" class="form-control" id="email_id" placeholder="Enter your Email id" required name="mail">
               </div>
 
               <div class="form-group">
                 <label for="subject">Query/ Suggestion/ Feedback: </label>
-                <textarea type="text" class="form-control" id="subject" placeholder="Description in details"> </textarea>
+                <textarea type="text" class="form-control" id="subject" placeholder="Description in details" name="comment"> </textarea>
               </div>
 
-              <button type="submit" class="btn btn-default
-                      text-subtitle-maroon">Submit</button>
+              <input type="submit" class="btn btn-default text-subtitle-maroon"
+              value="Send">
+              <input type="reset" class="btn btn-default text-subtitle-maroon"
+              value="Reset">
             </form>
           </div>
         </div>
@@ -152,19 +150,21 @@
           </div>
 
           <div class="col-sm-5 col-lg-3 social-wrapper">
-            <a class="btn btn-social-icon btn-twitter btn-bigsize">
+            <a class="btn btn-social-icon btn-twitter btn-bigsize"
+            href="https://twitter.com/saawg2016"
+            target="_blank">
               <span class="fa fa-twitter fa-bigsize"></span>
             </a>
 
-            <a class="btn btn-social-icon btn-facebook btn-bigsize">
+            <a class="btn btn-social-icon btn-facebook btn-bigsize"
+            href="https://www.facebook.com/saawg2016/"
+            target="_blank">
               <span class="fa fa-facebook fa-bigsize"></span>
             </a>
 
-            <a class="btn btn-social-icon btn-instagram btn-bigsize">
-              <span class="fa fa-instagram fa-bigsize"></span>
-            </a>
-
-            <a class="btn btn-social-icon btn-linkedin btn-bigsize">
+            <a class="btn btn-social-icon btn-linkedin btn-bigsize"
+            href="https://www.linkedin.com/in/saawg-south-asia-71a822140"
+            target="_blank">
               <span class="fa fa-linkedin fa-bigsize"></span>
             </a>
           </div>
@@ -175,6 +175,16 @@
       <div class="container">
         Copyright © 2017 <br>
         SAAWG (South Asian Association for Women Geoscientists)
+      </div>
+    </div>
+
+    <div id="sub-sub-footer" class="panel-footer" style="background-color: #ef5ba1;">
+      <div class="container">
+        Created By:
+        <a href="https://github.com/akanimax" target="_blank"
+          style="color: white;">
+          <u> Animesh Karnewar </u>
+        </a>
       </div>
     </div>
 
