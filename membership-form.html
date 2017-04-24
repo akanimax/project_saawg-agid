@@ -162,7 +162,8 @@
                 <input type="email" class="form-control" id="email_id" placeholder="Enter your Email id" name = "email"
                 ng-model="mC.member.email"
                 ng-required = "true">
-                <span ng-if="mC.memberForm.email.$error.required
+                <span ng-if="(mC.memberForm.email.$error.required ||
+                  mC.memberForm.email.$error.email)
                   && mC.memberForm.email.$touched">
                 *email is required in proper format</span>
               </div>
@@ -418,7 +419,7 @@
             <div class="modal-dialog modal-lg" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <button type="button" ng-click="window.location.reload()" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 </div>
                 <div class="modal-body">
                   <div class="alert alert-danger text-center">

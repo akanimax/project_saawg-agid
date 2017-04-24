@@ -12,13 +12,20 @@
     var mC = this; // rename the this variable to the controller as
     // syntax alternative
 
-    mC.member = {
+    var defaultMember = {
+      name: "",
+      address: "",
+      country: "",
+      email: "",
+      education: "",
       university: "",
       employment_status: "Not employed",
       employer: "",
       role: "",
       field_of_interests : []
     }; // initialize to empty object with empty array for field of interests
+
+    mC.member = angular.copy(defaultMember);
 
     mC.message = ""; // the message for displaying the status of the form
 
@@ -59,13 +66,19 @@
       }).then(function(response) {
           // return the form to normal state
           clearScreen();
-          // console.log(response.data);
+          // console.log(response);
           mC.message = "Your Information has been submitted and saved. " +
             "Please Note your Member id: " + response.data;
         },
         function(response) {
           // console.log(response);
-          mC.message = "Your information couldn't be submitted! Please Try after some time again";
+          if(response.status == 304) {
+            mC.message = "Your information couldn't be submitted! The email id already exists";
+          }
+          else {
+            mC.message = "Server Error! Your information couldn't be submitted! " +
+                "Please Try again after some time.";
+          }
         }
       )
 
@@ -75,13 +88,13 @@
       // console.log(mC.memberForm);
       // set the form untouched and pristine
       // console.log(mC.memberForm);
-      mC.memberForm.$setUntouched();
       mC.memberForm.$setPristine();
+      mC.memberForm.$setUntouched();
 
       // clear the checkboxes also
       clearCheckBoxes();
 
-      mC.member = {}; // this object stores all the form data
+      mC.member = angular.copy(defaultMember); // this object stores all the form data
       // so, simply assign it a new empty object
 
     }
