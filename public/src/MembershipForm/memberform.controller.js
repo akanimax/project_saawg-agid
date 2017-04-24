@@ -7,6 +7,8 @@
 
   memberformController.$inject = ["ApiPath", "$http"];
   function memberformController(ApiPath, $http) {
+    // $scope is required to specifically access the form
+
     var mC = this; // rename the this variable to the controller as
     // syntax alternative
 
@@ -47,7 +49,7 @@
         mC.member.employment_status = "Employed";
       }
 
-      console.log(mC.member);
+      // console.log(mC.member);
 
       // check getting all the members:
       $http({
@@ -55,6 +57,8 @@
         url: ApiPath + "/add-member",
         data: mC.member
       }).then(function(response) {
+          // return the form to normal state
+          clearScreen();
           // console.log(response.data);
           mC.message = "Your Information has been submitted and saved. " +
             "Please Note your Member id: " + response.data;
@@ -66,6 +70,31 @@
       )
 
     };
+
+    function clearScreen() {
+      // console.log(mC.memberForm);
+      // set the form untouched and pristine
+      // console.log(mC.memberForm);
+      mC.memberForm.$setUntouched();
+      mC.memberForm.$setPristine();
+
+      // clear the checkboxes also
+      clearCheckBoxes();
+
+      mC.member = {}; // this object stores all the form data
+      // so, simply assign it a new empty object
+
+    }
+
+    function clearCheckBoxes() {
+      var inputs = document.getElementsByTagName("input"); //or document.forms[0].elements;
+      for (var i = 0; i < inputs.length; i++) {
+        if (inputs[i].type == "checkbox") {
+          inputs[i].checked = false;
+        }
+      }
+    }
+
   }
 
 })();

@@ -117,7 +117,7 @@
           <div class="col-xs-offset-1 col-xs-10 col-md-offset-2 col-md-8">
             <h2 class="text-center text-title-pink">Membership Form</h2>
             <hr>
-            <form class="text-subtitle-maroon" name="memberForm" novalidate>
+            <form class="text-subtitle-maroon" name="mC.memberForm" novalidate>
               <div class="form-group">
                 <label for="name">Fullname (Beginning With Surname) * </label>
                 <input type="text" class="form-control" id="name" placeholder="Enter your name" name="fullname"
@@ -125,9 +125,9 @@
                 ng-required = "true"
                 ng-minlength = "4"
                 ng-maxlength = "100">
-                <span ng-if="(memberForm.fullname.$error.minlength ||
-                memberForm.fullname.$error.maxlength || memberForm.fullname.$error.required)
-                && memberForm.fullname.$touched">
+                <span ng-if="(mC.memberForm.fullname.$error.minlength ||
+                mC.memberForm.fullname.$error.maxlength || mC.memberForm.fullname.$error.required)
+                && mC.memberForm.fullname.$touched">
                   *First name is required (min = 4 chars, max = 100 chars)</span>
               </div>
 
@@ -138,9 +138,9 @@
                 ng-required = "true"
                 ng-minlength = "10"
                 ng-maxlength = "2000"> </textarea>
-                <span ng-if="(memberForm.address.$error.minlength ||
-                memberForm.address.$error.maxlength || memberForm.address.$error.required)
-                && memberForm.address.$touched">
+                <span ng-if="(mC.memberForm.address.$error.minlength ||
+                mC.memberForm.address.$error.maxlength || mC.memberForm.address.$error.required)
+                && mC.memberForm.address.$touched">
                 *Postal address is required (min = 10 chars, max = 2000 chars)</span>
               </div>
 
@@ -151,9 +151,9 @@
                 ng-required = "true"
                 ng-minlength = "1"
                 ng-maxlength = "100">
-                <span ng-if="(memberForm.country.$error.minlength ||
-                memberForm.country.$error.maxlength || memberForm.country.$error.required)
-                && memberForm.country.$touched">
+                <span ng-if="(mC.memberForm.country.$error.minlength ||
+                mC.memberForm.country.$error.maxlength || mC.memberForm.country.$error.required)
+                && mC.memberForm.country.$touched">
                 *Country name is required (max = 100 chars)</span>
               </div>
 
@@ -162,8 +162,8 @@
                 <input type="email" class="form-control" id="email_id" placeholder="Enter your Email id" name = "email"
                 ng-model="mC.member.email"
                 ng-required = "true">
-                <span ng-if="memberForm.email.$error.required
-                  && memberForm.email.$touched">
+                <span ng-if="mC.memberForm.email.$error.required
+                  && mC.memberForm.email.$touched">
                 *email is required in proper format</span>
               </div>
 
@@ -174,9 +174,9 @@
                 ng-required = "true"
                 ng-minlength = "1"
                 ng-maxlength = "100">
-                <span ng-if="(memberForm.education.$error.minlength ||
-                memberForm.education.$error.maxlength || memberForm.education.$error.required)
-                && memberForm.education.$touched">
+                <span ng-if="(mC.memberForm.education.$error.minlength ||
+                mC.memberForm.education.$error.maxlength || mC.memberForm.education.$error.required)
+                && mC.memberForm.education.$touched">
                 *Education details are required (max = 100 chars)</span>
               </div>
 
@@ -186,9 +186,9 @@
                 ng-model="mC.member.university"
                 ng-minlength = "1"
                 ng-maxlength = "200">
-                <span ng-if="(memberForm.university.$error.minlength ||
-                memberForm.university.$error.maxlength)
-                && memberForm.university.$touched">
+                <span ng-if="(mC.memberForm.university.$error.minlength ||
+                mC.memberForm.university.$error.maxlength)
+                && mC.memberForm.university.$touched">
                 *University details exceed max limit (max = 200 chars)</span>
               </div>
 
@@ -198,9 +198,9 @@
                 ng-model="mC.member.employer"
                 ng-minlength = "1"
                 ng-maxlength = "200">
-                <span ng-if="(memberForm.employer.$error.minlength ||
-                memberForm.employer.$error.maxlength)
-                && memberForm.employer.$touched">
+                <span ng-if="(mC.memberForm.employer.$error.minlength ||
+                mC.memberForm.employer.$error.maxlength)
+                && mC.memberForm.employer.$touched">
                 *Employmer details exceed max limit (max = 200 chars)</span>
               </div>
 
@@ -210,9 +210,9 @@
                 ng-model="mC.member.role"
                 ng-minlength = "1"
                 ng-maxlength = "200">
-                <span ng-if="(memberForm.role.$error.minlength ||
-                memberForm.role.$error.maxlength)
-                && memberForm.role.$touched">
+                <span ng-if="(mC.memberForm.role.$error.minlength ||
+                mC.memberForm.role.$error.maxlength)
+                && mC.memberForm.role.$touched">
                 *Employmer details exceed max limit (max = 200 chars)</span>
               </div>
 
@@ -222,7 +222,7 @@
                   <div class="col-sm-4">
                     <div class="checkbox">
                       <label>
-                        <input type="checkbox" value="Geoscience education"
+                        <input name = "temp" type="checkbox" value="Geoscience education"
                         ng-click='mC.toggleSelection("Geoscience education")'> Geoscience education
                       </label>
                     </div>
@@ -395,14 +395,14 @@
                 ng-model="mC.member.other"
                 ng-minlength = "1"
                 ng-maxlength = "1000">
-                <span ng-if="(memberForm.other.$error.minlength ||
-                memberForm.other.$error.maxlength)
-                && memberForm.other.$touched">
+                <span ng-if="(mC.memberForm.other.$error.minlength ||
+                mC.memberForm.other.$error.maxlength)
+                && mC.memberForm.other.$touched">
                 *Other interests exceed max limit (max = 1000 chars)</span>
               </div>
 
               <button class="btn btn-text-subtitle-maroon"
-              ng-disabled="memberForm.$invalid"
+              ng-disabled="mC.memberForm.$invalid"
               ng-click="mC.addMember()"
               data-toggle="modal"
               data-target="#alerter">
@@ -418,7 +418,7 @@
             <div class="modal-dialog modal-lg" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <button type="button" ng-click="window.location.reload()" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 </div>
                 <div class="modal-body">
                   <div class="alert alert-danger text-center">
