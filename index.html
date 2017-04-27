@@ -368,21 +368,87 @@
           <div class="clearfix visible-md-block visible-lg-block"></div>
 
           <!-- Bhavana Umrikar -->
-          <div class="col-md-4">
+          <div class="col-md-4 members-info">
             <div class="panel panel-default">
               <div class="panel-body">
                 <div class="row">
                   <div class="center-block">
-                    <img src="public/images/bhavana_umrikar.jpg"
-                        class="img-responsive img-circle center-block"/>
+
+                    <!-- Clicking the image triggers the modal -->
+                    <a data-toggle="modal" data-target="#BhavanaUmrikar" href="">
+                      <img src="public/images/bhavana_umrikar.jpg"
+                          class="img-responsive img-circle center-block"/>
+                    </a>
+
+                    <!-- Modal for more information -->
+                    <!-- modal -->
+
+                    <div class="modal fade" id="BhavanaUmrikar" tabindex="-1" role="dialog" aria-labelledby="abringer">
+                      <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h3 class="modal-title text-center text-title-maroon" id="myModalLabel"
+                              style="font-size: 2.4em;">
+                              <strong>Dr. Bhavana Umrikar</strong>
+                            </h3>
+                            <p class="text-center text-subtitle-maroon" style="font-size: 1.3em;">
+                              <span style="font-weight: bold;"> M.Sc. (Geology) Ph.D. (Hydrogeology) </span> <br>Associate Professor, Department of Geology, SPPU (Savitribai Phule Pune University), Pune, Maharashtra, India</p>
+                          </div>
+                          <div class="modal-body text-subtitle-maroon" style="font-size: 1.5em;">
+                            Possesses more than 17 years teaching experience at post graduate level. Specializes in Hydrogeology, Watershed Management and RS – GIS. <br><br>
+
+                            Shoulders various responsibilities at the Department of Geology of teaching, research and extension activities like career counselling and guidance to M Sc students.<br><br>
+
+                            Completed several projects on geo-environment appraisal, site suitability for water harvesting structures, watershed prioritization and urban hydrogeological studies. <br><br>
+
+                            Presented several papers in national and international conferences and more than 30 publications in national and international journals. Acquired various trainings in hydrogeology at Austria, China, Germany and The Netherlands. <br><br>
+
+                            <b style="font-size: 1.2em;">Honors &amp; Awards</b>: <br>
+                            <ul>
+                              <li>
+                                Recipient of the fellowship under the Netherlands Fellowship Programme (NFP) for attending the short course at UNESCO-IHE, Institute for Water Education, Delft, The Netherlands, 2013.
+                              </li>
+
+                              <li>
+                                UGC-TEC scholarship has been awarded (VI consortium) under group IV to visit Mauritius University (2010).
+                              </li>
+
+                              <li>
+                                Department of Geosciences, Freie University, Berlin has hosted as a post-doc researcher in the framework of Erasmus Mundus External Cooperation Window: Lot – 7 (2009).
+                              </li>
+
+                              <li>
+                                Recipient of the Best Paper Presentation Award during XII convention of ISTE (Maharashtra – Goa Section) and National Seminar held on 12th and 13th January, 2008. The theme of the convention was “Challenges for Technical Education in view of Global Changes" (2008).
+                              </li>
+
+                              <li>
+                                Recipient of the NNRMS sponsorship for the training on RS and GIS Applications in Geosciences, held at IIRS, Dehradun (2006).
+                              </li>
+
+                              <li>
+                                Recipient of the ‘Best Poster Presentation Award’ in Earth System Sciences section, during 91st Indian Science Congress held at Chandigad (2004).
+                              </li>
+
+                              <li>
+                                Recipient of Prof. K. V. Kelkar and Prof. W. B. Metre award for securing 1st rank in M.Sc. (Geology), University of Pune (1993).
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
                   </div>
                 </div>
 
                 <div  class="row text-center">
                   <h4 class="text-title-maroon"> <strong> Dr. Bhavana Umrikar </strong> </h3>
-                  <p class="text-subtitle-maroon">Country: India <br>
+                  <p class="text-subtitle-maroon remove-bottom-margin-for-p">Country: India <br>
                   Councilor for India<br>
                   bnumrikar@gmail.com</p>
+                  <a data-toggle="modal" class="text-subtitle-maroon text-" data-target="#BhagyashriMaggirwar" href="">
+                  <u> More info </u> </a>
                 </div>
               </div>
             </div>
@@ -398,7 +464,7 @@
                     <!-- Button trigger modal -->
                     <a data-toggle="modal" data-target="#BhagyashriMaggirwar" href="">
                       <img src="public/images/bhagyashri_maggirwar.jpg"
-                          class="img-responsive img-circle center-block" />
+                          class="img-responsive img-circle center-block"/>
                     </a>
 
                     <!--  modal for information -->
@@ -410,7 +476,7 @@
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                             <h3 class="modal-title text-center text-title-maroon" id="myModalLabel"
                               style="font-size: 2.4em;">
-                              <strong>Bhagyashri Maggirwar</strong>
+                              <strong>Ms. Bhagyashri Maggirwar</strong>
                             </h3>
                             <p class="text-center text-subtitle-maroon" style="font-size: 1.3em;">
                               <span style="font-weight: bold;"> M.Sc. (Geology; GIS, U.K.), Adv. Diploma (Computer) </span> <br>Senior Geologist, Groundwater Surveys and Development Agency, Govt. of Maharashtra, India</p>
@@ -427,10 +493,23 @@
                             Presented 5 research papers in international conferences and 5 research papers in peer reviewed journals. <br><br>
 
                             <b style="font-size: 1.2em;">Honors &amp; Awards</b>: <br>
-                            First rank in the university in post-graduation. <br>
-                            “Best Junior Geologist Award” by the Groundwater Surveys and Development Agency. <br>
-                            “David Ebdon Prize for Progress and Effort in GIS” by the University of Nottingham, UK. <br>
-                            Commonwealth Scholar of 2014.
+                            <ul>
+                              <li>
+                                First rank in the university in post-graduation.
+                              </li>
+
+                              <li>
+                                “Best Junior Geologist Award” by the Groundwater Surveys and Development Agency.
+                              </li>
+
+                              <li>
+                                “David Ebdon Prize for Progress and Effort in GIS” by the University of Nottingham, UK.
+                              </li>
+
+                              <li>
+                                Commonwealth Scholar of 2014.
+                              </li>
+                            </ul>                          
                           </div>
                         </div>
                       </div>
@@ -441,7 +520,7 @@
 
                 <div  class="row text-center">
                   <h4 class="text-title-maroon"> <strong> Ms. Bhagyashri Maggirwar </strong> </h3>
-                  <p class="text-subtitle-maroon" style="margin-bottom: 0px;">Country: India <br>
+                  <p class="text-subtitle-maroon remove-bottom-margin-for-p">Country: India <br>
                   Councilor for India<br>
                   bhagyashri.maggirwar@gmail.com</p>
                   <a data-toggle="modal" class="text-subtitle-maroon text-" data-target="#BhagyashriMaggirwar" href="">

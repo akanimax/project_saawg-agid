@@ -308,6 +308,17 @@ marquee h5 {
 }
 
 /*
+ **************
+ **************
+ Some very generic classes
+ **************
+*/
+
+p.remove-bottom-margin-for-p {
+  margin-bottom: 0px;
+}
+
+/*
 ********************************************************************************
 media queries for the tablet and laptop device sizes
 ********************************************************************************
